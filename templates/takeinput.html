@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="takeinput.css">
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+     <!-- Add additional services you want to use -->
+     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-messaging.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-functions.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media screen and (max-width: 768px) {
+    form h1 {
+      font-size: 20px;
+    }
+  
+    .form-group label {
+      font-size: 16px;
+    }
+  
+    .form-group input {
+      font-size: 14px;
+    }
+  
+    button {
+      font-size: 16px;
+    }
+  }
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  a.hover {
+    color: #0056b3;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form method="post" enctype="multipart/form-data">
+        <h1>Edit Profile</h1>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile:</label>
+          <input type="url" id="linkedin" name="linkedin" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Profile Picture:</label>
+          <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password :</label>
+          <input type="text" id="password" name="password" required>
+        </div>
+        <button type="submit" id="save">Save Changes</button>
+      </form>
+    </div>
+  </body>
+</html>

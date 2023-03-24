@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Student Freelance signup
+    </title>
+    <!-- Bootstrap core CSS -->
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <!-- Add additional services you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-functions.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ececec;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    padding: 2rem;
+    border: 1px solid transparent;
+}
+
+section h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 25px;
+}
+
+.auth-form {
+    margin-block-end: 1rem;
+}
+
+.auth-form-item {
+    display: flex;
+    margin-block-end: 1rem;
+    flex-direction: column;
+}
+
+
+.auth-form-item input {
+    height: 40px;
+    margin-top: 0.5rem;
+    padding: 0 10px;
+    border: 1px solid black;
+}
+
+.auth-form-item input.ng-invalid.ng-dirty, .auth-form-item input.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+.auth-form-item p {
+    color: red;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+button > svg {
+    margin-right: 10px;
+}
+
+button.auth-form-button, button.auth-logout {
+    background-color: #000;
+    color: white;
+}
+
+button.auth-button {
+    background-color: white;
+    border: 1px solid black;
+}
+
+section, button.auth-button, button.auth-form-button {
+    border-radius: .5rem;
+}
+
+section > p {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+section > p a {
+    margin-left: 5px;
+    color: rgb(47, 47, 82);
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.welcome span {
+    font-size: 27px;
+    color: cornflowerblue;
+}
+
+button.auth-logout {
+    width: 100px;
+    align-self: center;
+}
+    </style>
+</head>
+<body>
+    <main>
+        
+    <section>
+    <p id="error"></p>
+    <h2>Sign In</h2>
+    <form method="post">
+        
+        <div class="auth-form-item">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            </p>
+        </div>
+        <div class="auth-form-item">
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password">
+              <span>Enter your password.</span>
+            </p>
+        </div>
+        <button type="submit" class="auth-form-button" id="signin">Signin</button>
+    </form>
+</section>
+      </main>
+    
+</body>
+</html>

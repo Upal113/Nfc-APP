@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Information Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #F5F5F5;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      label {
+        font-size: 20px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"], input[type="url"], input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border: 2px sloid black;
+      }
+
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #3E8E41;
+      }
+
+      input[type="url"]::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #A9A9A9;
+      }
+
+      input[type="url"]::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #A9A9A9;
+      }
+
+      input[type="url"]:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #A9A9A9;
+      }
+
+      input[type="url"]:-moz-placeholder {
+        /* Firefox 18- */
+        color: #A9A9A9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Information</h1>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+
+      <label for="business">Business Name:</label>
+      <input type="text" id="business" name="business">
+
+      <label for="linkedin">LinkedIn URL:</label>
+      <input type="text" id="linkedin" name="linkedin">
+
+      <label for="business-url">Business URL:</label>
+      <input type="text" id="business-url" name="business-url">
+
+      <label for="resume-url">Resume URL:</label>
+      <input type="text" id="resume-url" name="resume-url">
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="18">
+
+      <input type="submit" id="submit" value="Submit">
+    </form>
+    <p id="log"></p>
+
+  </body>
+</html>
