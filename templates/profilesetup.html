@@ -133,7 +133,7 @@ button {
   
     try {
       const ndef = new NDEFReader();
-            let message = 
+      let message = {{message}};
       await ndef.write(message);
       document.getElementById("log").innerHTML += "> Message written";
     } catch (error) {
