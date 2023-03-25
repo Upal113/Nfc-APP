@@ -85,7 +85,8 @@ def find():
 def encode(user_id):
     if request.method == 'GET':
         user_data = ref.child(user_id).get()
-        return render_template('profilesetupupdate.html', data=user_data)
+        url = "/view/" + user_id
+        return render_template('profilesetupupdate.html', data=user_data, url=url)
 
 @app.route('/encode', methods=['GET', 'POST'])
 def encode_login():

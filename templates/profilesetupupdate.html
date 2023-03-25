@@ -105,6 +105,7 @@ button {
         <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["instagram"]}}">Instagram</a></button>
         <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["venmo"]}}">Venmo</a></button>
         <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["snapchat"]}}">Snapchat</a></button>
+        <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{url}}">View Profile</a></button>
         <button id="scanButton">Scan</button>
         <button id="writeButton">Write</button>
         <button id="makeReadOnlyButton">Make Read-Only</button>
@@ -139,8 +140,8 @@ button {
   
     try {
       const ndef = new NDEFReader();
-            let message = 
-      await ndef.write(message);
+      let message = window.location.href; 
+      await ndef.write(message.replace("encode", "view"));
       document.getElementById("log").innerHTML += "> Message written";
     } catch (error) {
       document.getElementById("log").innerHTML += "Argh! " + error;
