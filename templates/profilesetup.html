@@ -99,59 +99,13 @@ button {
         <p>Email: {{data["email"]}}</p>
         <p>Phone: {{data["phone"]}}</p>
         <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["linkedin"]}}">LinkedIn Profile</a></button>
-        <button id="scanButton">Scan</button>
-        <button id="writeButton">Write</button>
-        <button id="makeReadOnlyButton">Make Read-Only</button>
-        <p id="log"></p>
+        <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["website"]}}"> Website</a></button>
+        <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["facebook"]}}">Facebook</a></button>
+        <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["twitter"]}}">Twitter</a></button>
+        <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["instagram"]}}">Instagram</a></button>
+        <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["venmo"]}}">Venmo</a></button>
+        <button style="width: 60%;"><a style="text-decoration: none; color: white;" href="{{data["snapchat"]}}">Snapchat</a></button>
       </div>
     </div>
-    <script>
-      let log;
-        scanButton.addEventListener("click", async () => {
-    document.getElementById("log").innerHTML += "User clicked scan button";
-  
-    try {
-      const ndef = new NDEFReader();
-      await ndef.scan();
-      document.getElementById("log").innerHTML += "> Scan started";
-  
-      ndef.addEventListener("readingerror", () => {
-        document.getElementById("log").innerHTML += "Argh! Cannot read data from the NFC tag. Try another one?";
-      });
-  
-      ndef.addEventListener("reading", ({ message, serialNumber }) => {
-        document.getElementById("log").innerHTML += `> Serial Number: ${serialNumber}`;
-        document.getElementById("log").innerHTML += `> Records: (${message.records.length})`;
-      });
-    } catch (error) {
-      document.getElementById("log").innerHTML += "Argh! " + error;
-    }
-  });
-  
-  writeButton.addEventListener("click", async () => {
-    document.getElementById("log").innerHTML += "User clicked write button";
-  
-    try {
-      const ndef = new NDEFReader();
-            let message = 
-      await ndef.write(message);
-      document.getElementById("log").innerHTML += "> Message written";
-    } catch (error) {
-      document.getElementById("log").innerHTML += "Argh! " + error;
-    }
-  });
-  
-  makeReadOnlyButton.addEventListener("click", async () => {
-    document.getElementById("log").innerHTML += "User clicked make read-only button";
-  
-    try {
-      const ndef = new NDEFReader();
-      await ndef.makeReadOnly();
-      document.getElementById("log").innerHTML += "> NFC tag has been made permanently read-only";
-    } catch (error) {
-      document.getElementById("log").innerHTML += "Argh! " + error;
-    }
-  });
-    </script>
   </body>
 </html>
