@@ -6,7 +6,7 @@ click==8.0.1
 DateTime==4.3
 decorator==4.4.2
 fake-useragent==0.1.11
-filelock==3.0.12
+filelock==3.20.1
 Flask==2.0.1
 flask-ngrok==0.0.25
 Flask-SQLAlchemy==2.5.1
